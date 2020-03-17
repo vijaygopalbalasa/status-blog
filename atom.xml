@@ -4,7 +4,7 @@
  <title>San Status</title>
  <link href="/atom.xml" rel="self"/>
  <id></id>
- <updated>2020-03-17T20:16:21+05:30</updated>
+ <updated>2020-03-17T20:25:36+05:30</updated>
  <author>
    <name>Santhosh Veer</name>
    <uri>https://status.santhoshveer.com</uri>
@@ -18,10 +18,7 @@
    <link href="/welcome-post/"/>
    <id>/welcome</id>
    <updated>2020-03-17T00:00:00+05:30</updated>
-   <content type="html">&lt;p&gt;This is the First post on My Status and Text blog.&lt;/p&gt;
-
-&lt;p&gt;this site was Buils using Jekyll and Hosted on Github Pages.&lt;/p&gt;
-</content>
+   <content type="html">&lt;p&gt;This is the First post on My Status and Text blog and This site was Buils using Jekyll and Hosted on Github Pages.&lt;/p&gt; &lt;h2 id=&quot;features-&quot;&gt;Features ✨&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;SEO Meta Tags&lt;/li&gt; &lt;li&gt;Social Meta Tags&lt;/li&gt; &lt;li&gt;Schema Markup&lt;/li&gt; &lt;li&gt;Custom Post date,permalink,title and Author Name&lt;/li&gt; &lt;li&gt;Design Using Bulma CSS&lt;/li&gt; &lt;li&gt;Speed Optimized&lt;/li&gt; &lt;li&gt;Pagination&lt;/li&gt; &lt;li&gt;Custom Pages&lt;/li&gt;...</content>
  </entry>
 
  
@@ -57,6 +54,15 @@
    <id>/start-jekyll</id>
    <updated>2020-03-17T00:00:00+05:30</updated>
    <content type="html">&lt;p&gt;useful command lines and Steps to start the Jekyll site&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build exec jekyll build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
 
