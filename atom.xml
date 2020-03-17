@@ -1,30 +1,83 @@
----
-layout: null
----
-
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{{ site.title }}</title>
- <link href="{{ "/atom.xml" | prepend: site.baseurl | replace: '//', '/' }}" rel="self"/>
- <id>{{ site.baseurl }}</id>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <title>San Status</title>
+ <link href="/atom.xml" rel="self"/>
+ <id></id>
+ <updated>2020-03-17T18:33:26+05:30</updated>
  <author>
-   <name>{{ site.author.name }}</name>
-   <uri>{{ site.author.url }}</uri>
-   <email>{{ site.author.email }}</email>
+   <name>Santhosh Veer</name>
+   <uri>https://status.santhoshveer.com</uri>
+   <email>me@santhoshveer.com</email>
  </author>
 
- {% for post in site.posts limit: 10 %}
+ 
 
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"/>
-   <id>{{ post.id | prepend: site.baseurl | replace: '//', '/' }}</id>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <content type="html">{{ post.content | xml_escape | truncatewords:50 }}</content>
+   <title>San Status - First Blog Post 🙅</title>
+   <link href="/welcome-post/"/>
+   <id>/welcome</id>
+   <updated>2020-03-17T00:00:00+05:30</updated>
+   <content type="html">&lt;p&gt;This is the First post on My Status and Text blog.&lt;/p&gt;
+
+&lt;p&gt;this site was Buils using Jekyll and Hosted on Github Pages.&lt;/p&gt;
+</content>
  </entry>
 
- {% endfor %}
+ 
+
+ <entry>
+   <title>Test Post</title>
+   <link href="/test-post/"/>
+   <id>/test-post</id>
+   <updated>2020-03-17T00:00:00+05:30</updated>
+   <content type="html">&lt;p&gt;This is a test Post&lt;/p&gt;
+
+&lt;h1 id=&quot;heading&quot;&gt;Heading&lt;/h1&gt;
+
+&lt;h2 id=&quot;heading-1&quot;&gt;Heading&lt;/h2&gt;
+
+&lt;h3 id=&quot;heading-2&quot;&gt;Heading&lt;/h3&gt;
+
+&lt;h4 id=&quot;heading-3&quot;&gt;Heading&lt;/h4&gt;
+
+&lt;h5 id=&quot;heading-4&quot;&gt;Heading&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Hello World&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>Start Jekyll 🙅</title>
+   <link href="/start-jekyll/"/>
+   <id>/start-jekyll</id>
+   <updated>2020-03-17T00:00:00+05:30</updated>
+   <content type="html">&lt;p&gt;useful command lines and Steps to start the Jekyll site&lt;/p&gt;
+</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>How was the Day - 2020-03-17</title>
+   <link href="/day-update-1/"/>
+   <id>/day-update-1</id>
+   <updated>2020-03-17T00:00:00+05:30</updated>
+   <content type="html">&lt;p&gt;As Usual start with workout&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Blog post updates&lt;/li&gt;
+  &lt;li&gt;Social Handle Updates&lt;/li&gt;
+  &lt;li&gt;Jekyll setup and theme development&lt;/li&gt;
+  &lt;li&gt;Enjoying the Local Festival&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+
+ 
 
 </feed>
