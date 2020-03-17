@@ -17,6 +17,6 @@ deploy:
   repo: mskian/status-blog
   token: $GITHUB_TOKEN
   keep_history: true
-  fqdn: mskian.github.io/status-blog
+  fqdn: status.santhoshveer.com
   on:
     branch: master
