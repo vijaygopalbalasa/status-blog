@@ -12,6 +12,12 @@ layout: default
 {% for post in paginator.posts %}
 <h2 class="is-title home-title"><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></h2>
 <p>{{post.excerpt | strip_html}}</p>
+
+{% if post.author %}
+<span class="post-author">Posted by {{post.author}}</span>
+{% endif %} &nbsp;&nbsp;
+<time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">Posted on - {{ post.date | date_to_string }}</time>
+
 <hr>
 {% endfor %}
 
