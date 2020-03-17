@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<h1 class="title has-text-weight-medium has-text-centered">San Status 😅</h1>
+<hr>
+<p class="subtitle is-6 has-text-centered bio-author">
+<span class="site-bio">My Text Status and Notes</span>
+</p>
+<br>
+
+{% for post in paginator.posts %}
+<h2 class="is-title home-title"><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></h2>
+<p>{{post.excerpt | strip_html}}</p>
+<hr>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<div class="level level-item has-text-centered" role="navigation" aria-label="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span>{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="{{site.baseurl}}/">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
