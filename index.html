@@ -2,21 +2,24 @@
 layout: default
 ---
 
-<h1 class="title has-text-weight-medium has-text-centered">San Status 😅</h1>
-<hr>
-<p class="subtitle is-6 has-text-centered bio-author">
-<span class="site-bio">My Text Status and Notes</span>
-</p>
+<h1 class="title has-text-weight-medium has-text-centered">{{site.title}} 😅</h1>
 <br>
 
 {% for post in paginator.posts %}
 <h2 class="is-title home-title"><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></h2>
-<p>{{post.excerpt | strip_html}}</p>
 
 {% if post.author %}
+<p>
 <span class="post-author">Posted by {{post.author}}</span>
 {% endif %} &nbsp;&nbsp;
 <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">Posted on - {{ post.date | date_to_string }}</time>
+</p>
+
+<p>{{post.excerpt | strip_html}}</p>
+
+<p class="has-text-centered">
+<a class="button is-warning join-more" href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+</p>
 
 <hr>
 {% endfor %}
