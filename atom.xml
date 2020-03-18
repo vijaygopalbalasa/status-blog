@@ -4,7 +4,7 @@
  <title>San Status</title>
  <link href="/atom.xml" rel="self"/>
  <id></id>
- <updated>2020-03-18T11:15:33+05:30</updated>
+ <updated>2020-03-18T12:42:45+05:30</updated>
  <author>
    <name>Santhosh Veer</name>
    <uri>https://status.santhoshveer.com</uri>
@@ -49,19 +49,19 @@
  
 
  <entry>
-   <title>Start Jekyll 🙅</title>
+   <title>Start Jekyll 🤖</title>
    <link href="/start-jekyll/"/>
    <id>/start-jekyll</id>
    <updated>2020-03-17T00:00:00+05:30</updated>
-   <content type="html">&lt;p&gt;useful command lines and Steps to start the Jekyll site&lt;/p&gt;
+   <content type="html">&lt;p&gt;useful Command lines and Steps to start the Jekyll site.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build install
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build exec jekyll build
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;build exec jekyll serve
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll build
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
