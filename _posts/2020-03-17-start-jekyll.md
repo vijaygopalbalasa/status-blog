@@ -1,20 +1,20 @@
 ---
 layout: post
-title:  "Start Jekyll 🙅"
+title:  "Start Jekyll 🤖"
 permalink: "/start-jekyll/"
 author: "Santhosh Veer"
 ---
 
-useful command lines and Steps to start the Jekyll site
+useful Command lines and Steps to start the Jekyll site.
 
 ```
-build install
-```
-
-```
-build exec jekyll build
+bundle install
 ```
 
 ```
-build exec jekyll serve
+bundle exec jekyll serve
+```
+
+```
+bundle exec jekyll build
 ```
