@@ -4,12 +4,22 @@
  <title>San Status</title>
  <link href="/atom.xml" rel="self"/>
  <id></id>
- <updated>2020-03-18T12:42:45+05:30</updated>
+ <updated>2020-03-19T12:23:31+05:30</updated>
  <author>
    <name>Santhosh Veer</name>
    <uri>https://status.santhoshveer.com</uri>
    <email>me@santhoshveer.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>My Termux setup - Terminal Emulator for Android  🤖</title>
+   <link href="/my-termux-setup/"/>
+   <id>/my-termux-setup</id>
+   <updated>2020-03-19T00:00:00+05:30</updated>
+   <content type="html">&lt;p&gt;Here is My Termux Terminal Emulator Setup &amp;amp; Packages 🔖&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Linux on Android 💯&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;download-termux&quot;&gt;Download Termux&lt;/h2&gt; &lt;p&gt;Termux Terminal Emulator for Android&lt;/p&gt; &lt;p&gt;Get it from Google Play store 💯&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Install Termux - &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.termux&amp;amp;hl=en&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;https://play.google.com/store/apps/details?id=com.termux&amp;amp;hl=en&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Install Termux API - &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.termux.api&amp;amp;hl=en&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;https://play.google.com/store/apps/details?id=com.termux.api&amp;amp;hl=en&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Install...</content>
+ </entry>
 
  
 
@@ -24,63 +34,20 @@
  
 
  <entry>
-   <title>Test Post</title>
-   <link href="/test-post/"/>
-   <id>/test-post</id>
-   <updated>2020-03-17T00:00:00+05:30</updated>
-   <content type="html">&lt;p&gt;This is a test Post&lt;/p&gt;
-
-&lt;h1 id=&quot;heading&quot;&gt;Heading&lt;/h1&gt;
-
-&lt;h2 id=&quot;heading-1&quot;&gt;Heading&lt;/h2&gt;
-
-&lt;h3 id=&quot;heading-2&quot;&gt;Heading&lt;/h3&gt;
-
-&lt;h4 id=&quot;heading-3&quot;&gt;Heading&lt;/h4&gt;
-
-&lt;h5 id=&quot;heading-4&quot;&gt;Heading&lt;/h5&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Hello World&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
- </entry>
-
- 
-
- <entry>
    <title>Start Jekyll 🤖</title>
    <link href="/start-jekyll/"/>
    <id>/start-jekyll</id>
    <updated>2020-03-17T00:00:00+05:30</updated>
    <content type="html">&lt;p&gt;useful Command lines and Steps to start the Jekyll site.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll build
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>How was the Day - 2020-03-17</title>
-   <link href="/day-update-1/"/>
-   <id>/day-update-1</id>
-   <updated>2020-03-17T00:00:00+05:30</updated>
-   <content type="html">&lt;p&gt;As Usual start with workout&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Blog post updates&lt;/li&gt;
-  &lt;li&gt;Social Handle Updates&lt;/li&gt;
-  &lt;li&gt;Jekyll setup and theme development&lt;/li&gt;
-  &lt;li&gt;Enjoying the Local Festival&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;bundle exec jekyll build
+&lt;/code&gt;&lt;/pre&gt;
 </content>
  </entry>
 
