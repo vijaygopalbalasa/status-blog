@@ -15,6 +15,10 @@ url: https://status.santhoshveer.com
 email: me@santhoshveer.com
 
 markdown: kramdown
+highlighter: none
+kramdown:
+   syntax_highlighter_opts:
+      disable : true
 
 source: .
 destination: ./_site
@@ -43,6 +47,14 @@ defaults:
       layout: "post"
       image: /assets/san-status-thumb.jpg
 
+jekyll_compose:
+  default_front_matter:
+    posts:
+      description:
+      permalink:
+      author:
+      image:
+
 sass:
   sass_dir: /assets/css/_sass
   style: compressed
@@ -64,3 +76,4 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-compose

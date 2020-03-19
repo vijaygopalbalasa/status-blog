@@ -9,7 +9,7 @@ A Simple Static Site Build using Jekyll 📦
 - SEO Meta Tags
 - Social Meta Tags
 - Schema Markup
-- Custom Post date,permalink,title and Author Name
+- Custom Post date,permalink,title,Description,image and Author Name
 - Design Using Bulma CSS
 - Speed Optimized
 - Pagination
@@ -47,6 +47,12 @@ bundle exec jekyll serve
 
 ```bash
 bundle exec jekyll build
+```
+
+- Create New Post
+
+```bash
+bundle exec jekyll post "My New Post"
 ```
 
 ## LICENSE 📜

@@ -3,6 +3,7 @@ layout: default
 ---
 
 <h1 class="title has-text-weight-medium has-text-centered">{{site.title}} 😅</h1>
+
 <br>
 
 {% for post in paginator.posts %}
@@ -13,12 +14,6 @@ layout: default
 <span class="post-author">Posted by {{post.author}}</span>
 {% endif %} &nbsp;&nbsp;
 <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">Posted on - {{ post.date | date_to_string }}</time>
-</p>
-
-<p>{{post.excerpt | strip_html}}</p>
-
-<p class="has-text-centered">
-<a class="button is-warning join-more" href="{{ site.baseurl }}{{ post.url }}">Read More</a>
 </p>
 
 <hr>
