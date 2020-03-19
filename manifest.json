@@ -7,7 +7,7 @@
     "display": "standalone",
     "orientation":"any",
     "scope":"\/",
-    "start_url": ".\/?utm_source=tlvpwa&utm_medium=pwa&utm_campaign=tmlpwa",
+    "start_url": "/",
     "icons": [
       {
         "src": "assets/icons/Icon-48.png",
