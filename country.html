@@ -1,9 +1,9 @@
 ---
 layout: null
-title: Coronavirus Update (Live) - Novel COVID
-description: Coronavirus Update (Live) - track the COVID-19 World Status.
+title: Coronavirus Update (Live) - Novel COVID - Country Status
+description: Coronavirus Update (Live) - Track the COVID-19 Country Status.
 image: "/assets/sanstatus-covid-19.jpg"
-permalink: /covid/
+permalink: /country/
 ---
 
 <!DOCTYPE html>
@@ -37,14 +37,7 @@ permalink: /covid/
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" integrity="sha256-D9M5yrVDqFlla7nlELDaYZIpXfFWDytQtiV+TaH6F1I=" crossorigin="anonymous" />
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datatables-bulma@1.0.1/css/dataTables.bulma.min.css" integrity="sha256-05owdgJW8yVIFFvZjoJo73AJXkn5K+E2NShknOwPQow=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-
-<style>
-.dataTables_filter {
-text-align: left !important;
-}
-</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,7 +67,7 @@ text-align: left !important;
 <span aria-hidden="true"></span>
 <span aria-hidden="true"></span>
 <span aria-hidden="true"></span>
- </a>
+</a>
 </div>
 <div id="navMenu" class="navbar-menu">
 <div class="navbar-end">
@@ -87,54 +80,19 @@ text-align: left !important;
 
 <br>
 
-<h1 class="has-text-weight-medium has-text-centered">Coronavirus Update (Live)</h1>
-
-<br>
-
 <section class="section">
-<div class="container">
+<div class="container content app">
 <div class="columns is-centered">
-<div class="column is-full">
-
-<div class="table-container">
-<table id="noveldata" class="table">
-<thead>
-<tr>
-<th class="strong">Country</th>
-<th class="strong">Cases</th>
-<th class="strong">Today Cases</th>
-<th class="strong">Deaths</th>
-<th class="strong">Today Deaths</th>
-<th class="strong">Recovered</th>
-<th class="strong">Active</th>
-<th class="strong">Critical</th>
-<th class="strong">Cases Per One Million</th>
-</tr>
-</thead>
-</table>
-
-</div>
-</div>
-
+<div class="column is-three-fifths">
+<h2 class="has-text-weight-medium has-text-centered">Coronavirus Update (Live) - Country Status</h2>
+<hr>
+<div class="notice"></div>
+<hr>
+<br>
 </div>
 </div>
 </div>
 </section>
-
-<br>
-
-<section class="section">
-<div class="container content">
-<div class="columns is-centered">
-<div class="column is-half">
-<p class="has-text-centered" style="color:red;">
-Stay at Home - Wash your Hands with Soap - Have a Healthy Life
-</p>
-</div>
-</div>
-</div>
-</section>
-<br>
 
 <footer class="footer">
 <div class="content has-text-centered">
@@ -144,73 +102,58 @@ Stay at Home - Wash your Hands with Soap - Have a Healthy Life
 <p>	📦 COVID-19 Live Updates 🔴</p>
 </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js" integrity="sha256-L4cf7m/cgC51e7BFPxQcKZcXryzSju7VYBKJLOKPHvQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/datatables-bulma@1.0.1/js/dataTables.bulma.min.js" integrity="sha256-SF1o7Y4Baxhg3LxBa27T6f3+IlpkZ2uIM4elv+SGxmo=" crossorigin="anonymous"></script>
-
+  
 <script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+    if (results == null)
+        return "";
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+const appNotice = $('.app .notice');
+appNotice.html('<p>Fetching the Data</p>');
+var live = getParameterByName('live');
 $(document).ready(function() {
-    var table = $('#noveldata').DataTable({
-        "ajax": {
-            "url": "https://corona.lmao.ninja/countries",
-            "dataSrc": "",
-            "DeferRender": true
-        },
-
-        "language": {
-            "loadingRecords": "Please wait - Fetch Novel Data..."
-        },
-
-        "columnDefs": [{
-
-            "aTargets": [1, 2, 3, 4, 5, 6, 7, 8],
-            "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
-                if (sData < "100") {
-                    $(nTd).css('color', 'green')
-                    $(nTd).css('font-weight', 'bold')
-                }
-                if (sData > "100") {
-                    $(nTd).css('color', 'red')
-                    $(nTd).css('font-weight', 'bold')
+    if (live == live) {
+        $.ajax({
+            type: "GET",
+            url: "https://corona.lmao.ninja/countries/" + live,
+            success: function(data) {
+                console.log('DATA: ', data);
+                if (data === 'Country not found') {
+                    appNotice.empty();
+                    appNotice.append('<p class="notification is-danger">data not Found</p>');
+                } else if (live === '') {
+                    appNotice.empty();
+                    appNotice.append('<p class="notification is-danger">Data Not Found</p>');
+                } else {
+                    appNotice.empty();
+                    let mvcountry = data.country;
+                    let mvcases = data.cases;
+                    let mvtodayCases = data.todayCases;
+                    let mvdeaths = data.deaths;
+                    let mvtodayDeaths = data.todayDeaths;
+                    let mvrecovered = data.recovered;
+                    let mvactive = data.active;
+                    let mvcritical = data.critical;
+                    let mvcasesPerOneMillion = data.casesPerOneMillion;
+                    appNotice.append('<p>country - ' + mvcountry + '</p>');
+                    appNotice.append('<p>cases - ' + mvcases + '</p>');
+                    appNotice.append('<p>Today Cases - ' + mvtodayCases + '</p>');
+                    appNotice.append('<p>Deaths -' + mvdeaths + '</p>');
+                    appNotice.append('<p>Today Deaths - ' + mvtodayDeaths + '</p>');
+                    appNotice.append('<p>Recovered - ' + mvrecovered + '</p>');
+                    appNotice.append('<p>Active - ' + mvactive + '</p>');
+                    appNotice.append('<p>Critical - ' + mvcritical + '</p>');
+                    appNotice.append('<p>Cases Per One Million - ' + mvcasesPerOneMillion + '</p>');
                 }
             }
-        }],
-
-        "columns": [{
-                "data": "country"
-            },
-            {
-                "data": "cases"
-            },
-            {
-                "data": "todayCases"
-            },
-            {
-                "data": "deaths"
-            },
-            {
-                "data": "todayDeaths"
-            },
-            {
-                "data": "recovered"
-            },
-            {
-                "data": "active"
-            },
-            {
-                "data": "critical"
-            },
-            {
-                "data": "casesPerOneMillion"
-            },
-        ]
-    });
-    // setInterval(function() {
-        // table.ajax.reload();
-    // }, 120000);
-    setInterval(function() {
-        table.ajax.url( 'https://corona.lmao.ninja/countries' ).load();
-    }, 120000);
+        })
+    }
 });
 (function() {
     var burger = document.querySelector('.burger');
@@ -221,19 +164,19 @@ $(document).ready(function() {
         nav.classList.toggle('is-active');
     });
 })();
-if ('serviceWorker' in navigator) {	
-    window.addEventListener('load', function() {	
-        navigator.serviceWorker.register('/sw.js')	
-            .then(function(registration) {	
-                console.log('SuperPWA service worker ready');	
-                registration.update();	
-            })	
-            .catch(function(error) {	
-                console.log('Registration failed with ' + error);	
-            });	
-    });	
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('SuperPWA service worker ready');
+                registration.update();
+            })
+            .catch(function(error) {
+                console.log('Registration failed with ' + error);
+            });
+    });
 }
 </script>
-
+    
 </body>
 </html>
