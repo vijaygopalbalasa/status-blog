@@ -83,12 +83,11 @@ permalink: /country/
 <section class="section">
 <div class="container content app">
 <div class="columns is-centered">
-<div class="column is-three-fifths">
+<div class="column column is-two-fifths">
 <h2 class="has-text-weight-medium has-text-centered">Coronavirus Update (Live) - Country Status</h2>
 <hr>
 <div class="notice"></div>
 <hr>
-<br>
 </div>
 </div>
 </div>
@@ -102,7 +101,7 @@ permalink: /country/
 <p>	📦 COVID-19 Live Updates 🔴</p>
 </div>
 </footer>
-  
+
 <script>
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -115,7 +114,7 @@ function getParameterByName(name) {
         return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 const appNotice = $('.app .notice');
-appNotice.html('<p>Fetching the Data</p>');
+appNotice.html('<p>Fetching the Data 📦 ...</p>');
 var live = getParameterByName('live');
 $(document).ready(function() {
     if (live == live) {
@@ -141,15 +140,17 @@ $(document).ready(function() {
                     let mvactive = data.active;
                     let mvcritical = data.critical;
                     let mvcasesPerOneMillion = data.casesPerOneMillion;
-                    appNotice.append('<p>country - ' + mvcountry + '</p>');
-                    appNotice.append('<p>cases - ' + mvcases + '</p>');
-                    appNotice.append('<p>Today Cases - ' + mvtodayCases + '</p>');
-                    appNotice.append('<p>Deaths -' + mvdeaths + '</p>');
-                    appNotice.append('<p>Today Deaths - ' + mvtodayDeaths + '</p>');
-                    appNotice.append('<p>Recovered - ' + mvrecovered + '</p>');
-                    appNotice.append('<p>Active - ' + mvactive + '</p>');
-                    appNotice.append('<p>Critical - ' + mvcritical + '</p>');
-                    appNotice.append('<p>Cases Per One Million - ' + mvcasesPerOneMillion + '</p>');
+                    $(document).ready(function() {
+                        $('td').each(function() {
+                            var score = parseInt($(this).text());
+                            if (score > "100") {
+                                $(this).css('color', 'red');
+                            } else if (score < "100") {
+                                $(this).css('color', 'green');
+                            }
+                        })
+                    });
+                    appNotice.append('<table><tbody><tr><th>country</th><td><b>' + mvcountry + '</b></td></tr><tr><th>Cases</th><td><b>' + mvcases + '</b></td></tr><tr><th>Today Cases</th><td><b>' + mvtodayCases + '</b></td></tr><tr><th>Deaths</th><td><b>' + mvdeaths + '</b></td></tr><tr><th>Today Deaths</th><td><b>' + mvtodayDeaths + '</b></td></tr><tr><th>Recovered</th><td><b>' + mvrecovered + '</b></td></tr><tr><th>Active</th><td><b>' + mvactive + '</b></td></tr><tr><th>Critical</th><td><b>' + mvcritical + '</b></td></tr><tr><th>Cases Per One Million</th><td><b>' + mvcasesPerOneMillion + '</b></td></tr></tbody></table>');
                 }
             }
         })
