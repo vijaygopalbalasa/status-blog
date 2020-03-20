@@ -72,6 +72,9 @@ text-align: left !important;
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />	
+<link rel="manifest" href="/manifest.json">
+
 </head>
 <body>
 
@@ -162,9 +165,7 @@ $(document).ready(function() {
         "ajax": {
             "url": "https://corona.lmao.ninja/countries",
             "dataSrc": "",
-            "processing": true,
-            "serverSide": true,
-            "bDeferRender": true,
+            "DeferRender": true
         },
 
         "language": {
@@ -215,8 +216,11 @@ $(document).ready(function() {
             },
         ]
     });
+    // setInterval(function() {
+        // table.ajax.reload();
+    // }, 120000);
     setInterval(function() {
-        table.ajax.reload();
+        table.ajax.url( 'https://corona.lmao.ninja/countries' ).load();
     }, 120000);
 });
 (function() {
@@ -228,6 +232,18 @@ $(document).ready(function() {
         nav.classList.toggle('is-active');
     });
 })();
+if ('serviceWorker' in navigator) {	
+    window.addEventListener('load', function() {	
+        navigator.serviceWorker.register('/sw.js')	
+            .then(function(registration) {	
+                console.log('SuperPWA service worker ready');	
+                registration.update();	
+            })	
+            .catch(function(error) {	
+                console.log('Registration failed with ' + error);	
+            });	
+    });	
+}
 </script>
 
 </body>
